@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="./src/styles.css" type="stylesheet" />
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="text" id="input" />
+      <div id="ops">
+        <button id="block0" onclick="onAdd(0)">0</button>
+        <button id="block1" onclick="onAdd(1)">1</button>
+        <button id="block2" onclick="onAdd(2)">2</button>
+        <button id="block3" onclick="onAdd(3)">3</button>
+        <button id="block4" onclick="onAdd(4)">4</button>
+        <button id="block5" onclick="onAdd(5)">5</button>
+        <button id="block6" onclick="onAdd(6)">6</button>
+        <button id="block7" onclick="onAdd(7)">7</button>
+        <button id="block8" onclick="onAdd(8)">8</button>
+        <button id="block9" onclick="onAdd(9)">9</button>
+
+        <button id="plus" onclick="onAdd('+')">+</button>
+        <button id="minus" onclick="onAdd('-')">-</button>
+        <button id="multiply" onclick="onAdd('*')">*</button>
+        <button id="divide" onclick="onAdd('/')">/</button>
+
+        <button id="dot" onclick="onAdd('.')">.</button>
+        <button id="clr" onclick="clear()">Reset</button>
+
+        <button id="ans" onclick="Answer()">Ans</button>
+      </div>
+    </div>
+
+    <script>
+      let num = "";
+
+      function onAdd(input) {
+        num = num + input;
+        document.getElementById("input").value = num;
+      }
+
+      function setclear() {
+        num = "";
+        document.getElementById("input").value = num;
+      }
+
+      function setAnswer() {
+        let exe = eval(num);
+        document.getElementById("input").value = exe;
+      }
+    </script>
+  </body>
+</html>
